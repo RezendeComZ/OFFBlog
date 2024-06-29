@@ -1,0 +1,5 @@
+# It kinda works, and will work like this...
+
+After the initial setup, the Python script is able to delete a directory (if it exists), create a directory (if it doesn't exist), save a simple HTML file with some default gibberish, and catch any errors.
+
+My plan is for each post to be written in a Markdown file (.md). The posts directory structure follows a simple rule: year, month, and day. Within a day, the posts will be ordered by name. This is the second post of the day, so I'm using numbers to order them, this post file is named '2_it_kinda_works.md'. Each post will have an HTML name, which will be the name of the Markdown file, excluding any leading numbers and underscores. So '2_it_kinda_works.md' will become 'it_kinda_works.html', the post order will be shown in the menu or HTML file of the day.
