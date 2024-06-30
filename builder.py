@@ -1,15 +1,15 @@
-import os, shutil
+import os, shutil, html_generator, offpost_to_dict, partial
 
 CURRENT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 PUBLIC_DIRECTORY = os.path.join(CURRENT_DIRECTORY, 'public')
 BLOG_POSTS_DIRECTORY = os.path.join(CURRENT_DIRECTORY, 'blog-posts')
 
-def post_location(name):
-  return os.path.join(PUBLIC_DIRECTORY, name + ".html")
+def post_location(location, name):
+  return os.path.join(location, name + ".html")
 
-def write_html_file(content):
-  file = open(post_location(content), "w")
-  file.write("<h1>Something</h1>")
+def write_html_file(location, content):
+  file = open(post_location(location), "w")
+  file.write(content)
   file.close()
 
 def create_PUBLIC_DIRECTORY():
@@ -35,17 +35,28 @@ def initial_public_directory_setup():
   erase_PUBLIC_DIRECTORY()
   create_PUBLIC_DIRECTORY()
 
+def make_html(location, content):
+  html_content = offpost_to_dict.offpost_to_dict(content)
+  write_html_file(location, html_content)
+
+
 def replicate_directory_structure(source_dir, target_dir):
     # Walk through the source directory
     for root, dirs, files in os.walk(source_dir):
+        print("root:")
+        print(root)
         # Calculate the relative path from the source directory
         relative_path = os.path.relpath(root, source_dir)
         target_path = os.path.join(target_dir, relative_path)
+        # print("relative_path:")
+        # print(relative_path)
+        # print("target_path:")
+        # print(target_path)
+        print("files:")
         print(files)
-
+        map(partial(make_html root), files)
         # Create the directory in the target directory
         os.makedirs(target_path, exist_ok=True)
-
 
 def main():
   initial_public_directory_setup()
