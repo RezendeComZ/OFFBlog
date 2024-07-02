@@ -6,12 +6,12 @@ def file_name(title, index):
   # TODO, use the index number ONLY to order posts on other pages while keeping the file name clean without including the number
   return str(index) + "-" + title.replace(" ", "-").replace(",", "").lower()
 
-def body(file):
+def body(file, date):
   lines = file.split('\n')
-  return '\n'.join(lines[1:])
+  return '\n'.join(lines[1:]) + "<p>" + date + "</p>"
 
-def html_structure(file, file_number):
+def html_structure(file, file_number, date):
   title_name = title(file)
   return {"title": title_name,
           "file_name": file_name(title_name, file_number),
-          "body": body(file)}
+          "body": body(file, date)}

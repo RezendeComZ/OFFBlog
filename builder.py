@@ -14,50 +14,58 @@ def write_html_file(location, html_content):
 
 def create_PUBLIC_DIRECTORY():
   if os.path.exists(PUBLIC_DIRECTORY):
-    print("'Public' directory already exists.")
+    print("The 'public' directory already exists.")
+    return True
   else:
     try:
       os.makedirs(PUBLIC_DIRECTORY)
+      return True
     except Exception as e:
-      print(f"Something went wrong while creating 'Public' directory {e}")
+      print(f"Something went wrong while creating the 'public' directory {e}")
 
 def erase_PUBLIC_DIRECTORY():
   if os.path.exists(PUBLIC_DIRECTORY):
     try:
       shutil.rmtree(PUBLIC_DIRECTORY)
+      return True
     except Exception as e:
-      print(f"Something went wrong while deleting 'Public' directory: {e}")
+      print(f"Something went wrong while deleting the 'public' directory: {e}")
   else: 
-    print("'Public' directory does not exist to be deleted.")
+    # The 'public' directory does not exist and cannot be deleted.
+    return True
 
 def initial_public_directory_setup():
-  # TODO, Return an error if necessary
-  erase_PUBLIC_DIRECTORY()
-  create_PUBLIC_DIRECTORY()
+  return erase_PUBLIC_DIRECTORY() and create_PUBLIC_DIRECTORY()
 
 def make_html(location, destination, file_name, file_number):
+  date_numbers = destination.split("/")[-3:]
+  date = "/".join(date_numbers)
   file = open(location + "/" + file_name, "r")
-  html_content = offpost_to_dict.html_structure(file.read(), file_number)
+  html_content = offpost_to_dict.html_structure(file.read(), file_number, date)
   write_html_file(destination, html_content)
 
 def replicate_directory_structure(source_dir, target_dir):
-    # Walk through the source directory
+    # Walk through the source directory.
     for root, dirs, files in os.walk(source_dir):
-        # TODO, Generate a index file for the year/month
+        # TODO, Generate a index file for the year/month.
 
-        # Calculate the relative path from the source directory
+        # Calculate the relative path from the source directory.
         relative_path = os.path.relpath(root, source_dir)
         target_path = os.path.join(target_dir, relative_path)
 
-        os.makedirs(target_path, exist_ok=True) # Create the directory in the target directory
+
+        os.makedirs(target_path, exist_ok=True) # Create the directory in the target directory.
 
         file_number = 1
-        for nome_arquivo in files:
-          make_html(root, target_path, nome_arquivo, file_number)
+        for file_name in files:
+          make_html(root, target_path, file_name, file_number)
           file_number += 1
 
 def run():
-  initial_public_directory_setup()
-  replicate_directory_structure(BLOG_POSTS_DIRECTORY, PUBLIC_DIRECTORY)
+  if initial_public_directory_setup():
+    replicate_directory_structure(BLOG_POSTS_DIRECTORY, PUBLIC_DIRECTORY)
+    print("Finished successfully.")
+  else:
+    print("Error while generating the initial setup for the 'public' directory.")
 
 run()
