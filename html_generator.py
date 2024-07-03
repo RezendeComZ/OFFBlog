@@ -1,3 +1,25 @@
+code_block_start = True
+
+def code_block_sign(text):
+  global code_block_start
+  if code_block_start:
+    code_block_start = False
+    return text + "<span class=code_block>"
+  else:
+    code_block_start = False
+    return "</span>" + text
+
+
+def code_block_formater(paragraphs_html):
+  code_blocks = paragraphs_html.split("```")
+  if (len(code_blocks)) > 1:
+    return "".join(map(code_block_sign ,code_blocks))
+  else:
+    return paragraphs_html
+
+def text_formatter(paragraphs_html):
+  return code_block_formater(paragraphs_html)
+
 def html_tag(content):
   return "<!doctype html><html lang=\"en-US\">" + content + "</html>"
 
@@ -8,7 +30,12 @@ def nav_tag():
   return custom_tag("nav", "Home | By subject | By Date")
 
 def article_tag(content, title):
-  return "<h1>" + title + "</h2><p>" + content + "</p>"
+  paragraphs = content.split("\n")
+
+  paragraphs_tags = map(lambda paragraph: "<p>" + paragraph + "</p>", paragraphs)
+  paragraphs_html = "".join(paragraphs_tags)
+  formatted_text = text_formatter(paragraphs_html)
+  return "<article><h1>" + title + "</h1>" + formatted_text + "</article>"
 
 def body_tag(content, title):
   header = custom_tag("header", "alou")
