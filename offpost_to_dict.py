@@ -4,11 +4,11 @@ def title(file):
 
 def file_name(title, index):
   # TODO, use the index number ONLY to order posts on other pages while keeping the file name clean without including the number
-  return str(index) + "-" + title.replace(" ", "-").replace(",", "").lower()
+  return str(index) + "-" + title.replace(" ", "-").replace(",", "").replace(".", "").lower()
 
 def body(file, date):
   lines = file.split('\n')
-  return '\n'.join(lines[1:]) + "<p>" + date + "</p>"
+  return "<p>" + date + "</p>" + '\n'.join(lines[1:])
 
 def html_structure(file, file_number, date):
   title_name = title(file)

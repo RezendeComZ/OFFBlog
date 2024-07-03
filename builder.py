@@ -38,7 +38,7 @@ def initial_public_directory_setup():
   return erase_PUBLIC_DIRECTORY() and create_PUBLIC_DIRECTORY()
 
 def make_html(location, destination, file_name, file_number):
-  date_numbers = destination.split("/")[-3:]
+  date_numbers = destination.split("/")[-3:][::-1]
   date = "/".join(date_numbers)
   file = open(location + "/" + file_name, "r")
   html_content = offpost_to_dict.html_structure(file.read(), file_number, date)
