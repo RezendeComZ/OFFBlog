@@ -1,21 +1,17 @@
 code_block_start = True
 
-def code_block_sign(text):
+def code_block_tag():
   global code_block_start
   if code_block_start:
     code_block_start = False
-    return text + "<span class=code_block>"
+    return "<span class=code_block style=\"color:red; font-family: monospace;\">"
   else:
-    code_block_start = False
-    return "</span>" + text
-
+    code_block_start = True
+    return "</span>" 
 
 def code_block_formater(paragraphs_html):
-  code_blocks = paragraphs_html.split("```")
-  if (len(code_blocks)) > 1:
-    return "".join(map(code_block_sign ,code_blocks))
-  else:
-    return paragraphs_html
+  code_blocks = paragraphs_html.split("<p>```</p>")
+  return "".join(map(lambda p: p + code_block_tag(), code_blocks))
 
 def text_formatter(paragraphs_html):
   return code_block_formater(paragraphs_html)
