@@ -1,3 +1,6 @@
 # Dealing with errors
 
-The builder now handles situations when the 'public' directory is unwritable with simple error detection. Logging has been added to verify whether operations succeed or fail. By default, the '.gitignore' file does not ignore the 'public' directory. Now there's a date at the end of the post, along with a proper title.
+The builder now handles situations where the 'public' directory is unwritable with simple error detection.
+Logging has been added to verify whether operations succeed or fail.
+By default, the '.gitignore' file does not ignore the 'public' directory.
+Additionally, posts now include a date at the end and have a proper title.

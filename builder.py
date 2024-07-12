@@ -53,7 +53,6 @@ def replicate_directory_structure(source_dir, target_dir):
         relative_path = os.path.relpath(root, source_dir)
         target_path = os.path.join(target_dir, relative_path)
 
-
         os.makedirs(target_path, exist_ok=True) # Create the directory in the target directory.
 
         file_number = 1
@@ -61,9 +60,17 @@ def replicate_directory_structure(source_dir, target_dir):
           make_html(root, target_path, file_name, file_number)
           file_number += 1
 
+def css_content():
+   css_reference = open(CURRENT_DIRECTORY + "/style_reference.css", "r")
+   css_file = open(os.path.join(PUBLIC_DIRECTORY, "../styles.css"), "w")
+   css_file.write(css_reference.read())
+   css_reference.close()
+   css_file.close()
+
 def run():
   if initial_public_directory_setup():
     replicate_directory_structure(BLOG_POSTS_DIRECTORY, PUBLIC_DIRECTORY)
+    css_content()
     print("Finished successfully.")
   else:
     print("Error while generating the initial setup for the 'public' directory.")

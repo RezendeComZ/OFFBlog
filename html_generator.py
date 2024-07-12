@@ -1,17 +1,26 @@
 code_block_start = True
 
+code_block_div_start = "<div class=code_block>"
+
+div_end = "</div>"
+
 def code_block_tag():
   global code_block_start
+  # print(code_block_start)
   if code_block_start:
     code_block_start = False
-    return "<span class=code_block style=\"color:red; font-family: monospace;\">"
+    return code_block_div_start
   else:
     code_block_start = True
-    return "</span>" 
+    return div_end
 
 def code_block_formater(paragraphs_html):
+  global code_block_start
+  code_block_start = True
   code_blocks = paragraphs_html.split("<p>```</p>")
-  return "".join(map(lambda p: p + code_block_tag(), code_blocks))
+  code_block_tags = "".join(map(lambda p: p + code_block_tag(), code_blocks))
+  return code_block_tags[slice(-len(code_block_div_start))] # Remove extra code_block div
+
 
 def text_formatter(paragraphs_html):
   return code_block_formater(paragraphs_html)
@@ -41,7 +50,7 @@ def body_tag(content, title):
   return custom_tag("body", body_content)
 
 def generate_html(title, body_content):
-  head_content = "<title>" + title + "</title>"
+  head_content = "<title>" + title + "</title>" + "<link rel=\"stylesheet\" href=\"/styles.css\">"
   head = custom_tag("head", head_content)
   body = body_tag(body_content, title)
   body_content = head + body

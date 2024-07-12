@@ -1,0 +1,9 @@
+# CSS Generator
+
+The Code Blocks feature requires a distinct CSS style. While HTML allows CSS values to be embedded directly within DIV tags, this approach is not optimal and leads to a lot of duplicate code.
+
+```
+This presented an opportunity to create a CSS file generator.
+```
+
+Currently, it is simply a copy of a CSS reference file.
