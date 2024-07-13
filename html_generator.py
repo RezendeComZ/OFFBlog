@@ -1,3 +1,5 @@
+from configs import configs
+
 code_block_start = True
 
 code_block_div_start = "<div class=code_block>"
@@ -6,7 +8,6 @@ div_end = "</div>"
 
 def code_block_tag():
   global code_block_start
-  # print(code_block_start)
   if code_block_start:
     code_block_start = False
     return code_block_div_start
@@ -19,7 +20,7 @@ def code_block_formater(paragraphs_html):
   code_block_start = True
   code_blocks = paragraphs_html.split("<p>```</p>")
   code_block_tags = "".join(map(lambda p: p + code_block_tag(), code_blocks))
-  return code_block_tags[slice(-len(code_block_div_start))] # Remove extra code_block div
+  return code_block_tags[slice(-len(code_block_div_start))] # Remove extra code_block div, not my best code
 
 
 def text_formatter(paragraphs_html):
@@ -43,15 +44,15 @@ def article_tag(content, title):
   return "<article><h1>" + title + "</h1>" + formatted_text + "</article>"
 
 def body_tag(content, title):
-  header = custom_tag("header", "alou")
+  header = custom_tag("header", configs["blog_title"])
   nav = nav_tag()
   article = article_tag(content, title)
   body_content = header + nav + article
   return custom_tag("body", body_content)
 
-def generate_html(title, body_content):
-  head_content = "<title>" + title + "</title>" + "<link rel=\"stylesheet\" href=\"/styles.css\">"
+def generate_html(article_title, body_content):
+  head_content = "<title>" + configs["html_blog_title"] + " - " + article_title + "</title>" + "<link rel=\"stylesheet\" href=\"/styles.css\">"
   head = custom_tag("head", head_content)
-  body = body_tag(body_content, title)
+  body = body_tag(body_content, article_title)
   body_content = head + body
   return html_tag(body_content)
