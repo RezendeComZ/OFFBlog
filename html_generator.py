@@ -1,10 +1,13 @@
-from configs import configs
+import configs
 
 code_block_start = True
 
 code_block_div_start = "<div class=code_block>"
 
 div_end = "</div>"
+
+def title(article_title):
+  return "<title>" + article_title + " - " + configs.TITLE + "</title>"
 
 CSS_TAG = "<link rel=\"stylesheet\" href=\"/styles.css\">"
 
@@ -30,11 +33,11 @@ def text_formatter(paragraphs_html):
 def html_tag(content):
   return "<!doctype html><html lang=\"en-US\">" + content + "</html>"
 
-def custom_tag(tag_name, content):
-  return "<" + tag_name + ">" + content + "</" + tag_name + ">"
+def custom_tag(tag_name, attribute, content):
+  return "<" + tag_name + " " + (attribute or "") +">" + content + "</" + tag_name + ">"
 
 def nav_tag():
-  return custom_tag("nav", "Home | By subject | By Date")
+  return custom_tag("nav", None, "Home | By subject | By Date")
 
 def article_tag(content, title):
   paragraphs = content.split("\n")
@@ -42,19 +45,20 @@ def article_tag(content, title):
   paragraphs_tags = map(lambda paragraph: "<p>" + paragraph + "</p>", paragraphs)
   paragraphs_html = "".join(paragraphs_tags)
   formatted_text = text_formatter(paragraphs_html)
-  return "<article><h1>" + title + "</h1>" + formatted_text + "</article>"
+  return "<article><h1 id=article_title>" + title + "</h1>" + formatted_text + "</article>"
+
+def navigation_bar():
+  header = custom_tag("header", None, "<h1 id=blog_title>"+ configs.TITLE + "</h1>")
+  return custom_tag("div", "id=navigation_bar", header + nav_tag())
 
 def body_tag(content, title):
-  header = custom_tag("header", configs["blog_title"])
-  nav = nav_tag()
   article = article_tag(content, title)
-  body_content = header + nav + article
-  return custom_tag("body", body_content)
+  body_content = navigation_bar() + article
+  return custom_tag("body", None, body_content)
 
 def head(article_title):
-  title = "<title>" + configs["html_blog_title"] + " - " + article_title + "</title>"
-  head_content = title + CSS_TAG
-  return custom_tag("head", head_content)
+  head_content = title(article_title) + CSS_TAG
+  return custom_tag("head", None, head_content)
 
 def generate_html(article_title, body_content):
   body = body_tag(body_content, article_title)
