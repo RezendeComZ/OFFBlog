@@ -1,4 +1,4 @@
-import os, util, configs
+import os, const, configs
 
 body = "body {background-color: " + configs.BACKGROUND_COLOR + "; margin-right: 150px; margin-left: 150px}"
 blog_title = "#blog_title {color: " + configs.TITLE_COLOR + "; font-family: monospace; font-size: 220%}"
@@ -11,5 +11,5 @@ code_block = ".code_block {font-family: monospace; background: #343942; border-r
 css_tags = body + blog_title + navigation_bar + nav + article_title + p + code_block
 
 def css_content():
-  css_file = open(os.path.join(util.PUBLIC_DIRECTORY, "../styles.css"), "w")
+  css_file = open(os.path.join(const.PUBLIC_DIRECTORY, "../styles.css"), "w")
   css_file.write(css_tags)

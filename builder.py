@@ -1,6 +1,4 @@
-import os, shutil, html_generator, offpost_to_dict, css_style, util
-
-BLOG_POSTS_DIRECTORY = os.path.join(util.CURRENT_DIRECTORY, 'blog-posts')
+import os, shutil, html_generator, offpost_to_dict, css_style, const, time
 
 def post_location(location, name):
   return os.path.join(location, name + ".html")
@@ -11,20 +9,20 @@ def write_html_file(location, html_content):
   file.close()
 
 def create_PUBLIC_DIRECTORY():
-  if os.path.exists(util.PUBLIC_DIRECTORY):
+  if os.path.exists(const.PUBLIC_DIRECTORY):
     print("The 'public' directory already exists.")
     return True
   else:
     try:
-      os.makedirs(util.PUBLIC_DIRECTORY)
+      os.makedirs(const.PUBLIC_DIRECTORY)
       return True
     except Exception as e:
       print(f"Something went wrong while creating the 'public' directory {e}")
 
 def erase_PUBLIC_DIRECTORY():
-  if os.path.exists(util.PUBLIC_DIRECTORY):
+  if os.path.exists(const.PUBLIC_DIRECTORY):
     try:
-      shutil.rmtree(util.PUBLIC_DIRECTORY)
+      shutil.rmtree(const.PUBLIC_DIRECTORY)
       return True
     except Exception as e:
       print(f"Something went wrong while deleting the 'public' directory: {e}")
@@ -47,7 +45,7 @@ def replicate_directory_structure(source_dir, target_dir):
     for root, dirs, files in os.walk(source_dir):
         # TODO, Generate a index file for the year/month.
 
-        # Calculate the relative path from the source directory.
+        # Relative path from the source directory.
         relative_path = os.path.relpath(root, source_dir)
         target_path = os.path.join(target_dir, relative_path)
 
@@ -60,9 +58,12 @@ def replicate_directory_structure(source_dir, target_dir):
 
 def run():
   if initial_public_directory_setup():
-    replicate_directory_structure(BLOG_POSTS_DIRECTORY, util.PUBLIC_DIRECTORY)
+    ts_start = time.time()
+    replicate_directory_structure(const.BLOG_POSTS_DIRECTORY, const.PUBLIC_DIRECTORY)
     css_style.css_content()
-    print("Finished successfully.")
+    # create_index(const.BLOG_POSTS_DIRECTORY, const.PUBLIC_DIRECTORY)
+    ts_end = time.time()
+    print("Finished successfully in " + str('%.4f'%(ts_end - ts_start)) + "s.")
   else:
     print("Error while generating the initial setup for the 'public' directory.")
 
