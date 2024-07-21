@@ -1,3 +1,1 @@
-.code_block {
-  font-family: monospace;
-  background: grey}
+body {background-color: rgb(28, 29, 31); margin-right: 150px; margin-left: 150px}#blog_title {color: yellow; font-family: monospace; font-size: 220%}#navigation_bar {display: flex; align-items: center}nav {color:white; font-family: monospace; margin-left: 20px; font-size: 125%}#article_title {color: white; font-family: monospace; font-size: 220%}p {color: white; font-family: monospace; font-size: 150%}.date {color: grey}.code_block {font-family: monospace; background: #343942; border-radius: 25px; padding: 5px 15px 5px;}
