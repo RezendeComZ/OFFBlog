@@ -3,7 +3,7 @@ def title(file):
   return file.split("\n")[0][2:]
 
 def file_name(title):
-  return title.replace(" ", "-").replace(",", "").replace(".", "").replace("!", "").replace("_", "-") # ! USE REGEX
+    return title.translate(str.maketrans(" ,.!_", "-----", ".,!"))
 
 def body(file, date):
   lines = file.split('\n')

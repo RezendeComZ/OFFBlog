@@ -45,7 +45,7 @@ def article_tag(content, title):
   return "<article><h1 id=article_title>" + title + "</h1>" + formatted_text + "</article>"
 
 def navigation_bar():
-  header = custom_tag("header", None, "<h1 id=blog_title>"+ configs.TITLE + "</h1>")
+  header = custom_tag("header", None, "<h1 id=blog_title><a href=" + configs.BLOG_URL + ">" + configs.TITLE + "</a></h1>")
   return custom_tag("div", "id=navigation_bar", header)
 
 def body_tag(content, title):
