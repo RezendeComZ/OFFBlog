@@ -1,0 +1,9 @@
+# Finally a decent README file
+
+Okay, the README.md could be better, I admit. But some things are working, including the index file. In the coming weeks I will focus on another project and will use this blog as a diary. For now, the blog itself is the project.
+
+I intend to support more Markdown features, like <b>bold</b>, <i>italic</i> (I'm using HTML here), and other necessary elements. This blog system doesn't aim to have high level features, quite the opposite. I wouldn't have time for that anyway :).
+
+To prove a point, an HTML tag with a YouTube video:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uAb3uVpf_v0?si=gIkkFUrNqo6Dpk89" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
