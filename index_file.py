@@ -26,8 +26,8 @@ def generate_post_index_tag(source_file):
   post_url = "/".join(post_url_split) + "/" + file_name + ".html"
   date_array = post_url_split
   date = "-".join(date_array)
-  post_line_text = html_generator.paragraph_tag(title)
-  link = "<a href=\"" + post_url + "\">" + post_line_text + "</a>"
+  post_line_text = title
+  link = "<a href=" + post_url + ">" + post_line_text + "</a>"
   date_span = util.custom_tag("span", "class=date", date)
   post_line_url = util.custom_tag("span", "class=postline", date_span + link + post_tags_html(source_file))
 
