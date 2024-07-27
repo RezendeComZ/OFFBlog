@@ -31,7 +31,7 @@ def generate_post_index_tag(source_file):
   date_span = util.custom_tag("span", "class=date", date)
   post_line_url = util.custom_tag("span", "class=postline", date_span + link + post_tags_html(source_file))
 
-  return post_line_url 
+  return post_line_url
 
 def generate_index_content(source_dir):
   files_list = []

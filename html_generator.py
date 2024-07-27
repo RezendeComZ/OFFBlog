@@ -32,7 +32,7 @@ def html_tag(content):
   return "<!doctype html><html lang=\"en-US\">" + content + "</html>"
 
 def paragraph_tag(text):
-  return "<p>" + text + "</p>"
+  return "<p>" + text + "</p>\n"
 
 def article_tag(content, title):
   paragraphs = content.split("\n")
