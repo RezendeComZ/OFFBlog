@@ -45,7 +45,10 @@ def replicate_directory_structure(source_dir, target_dir):
         os.makedirs(target_path, exist_ok=True) # Create the directory in the target directory.
 
         for file_name in files:
-          make_html(root, target_path, file_name)
+          if util.is_offpost_file(file_name):
+            make_html(root, target_path, file_name)
+          else:
+            shutil.copyfile(root + "/" + file_name, target_path + "/" + file_name) # Pure copy
 
 def run():
   if initial_public_directory_setup():

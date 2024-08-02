@@ -38,7 +38,8 @@ def generate_index_content(source_dir):
   for root, dirs, files in os.walk(source_dir):
       for file in files:
           files_list.append(os.path.join(root, file))
-  posts_tags = map(generate_post_index_tag, files_list)
+  off_post_files = filter(util.is_offpost_file, files_list)
+  posts_tags = map(generate_post_index_tag, off_post_files)
 
   return reversed(list(posts_tags))
 

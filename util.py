@@ -5,3 +5,6 @@ def custom_tag(tag_name, attribute, content):
 
 def post_location(location, name):
   return os.path.join(location, name + ".html")
+
+def is_offpost_file(file_name):
+  return file_name.split(".")[-1] == "offpost"
