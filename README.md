@@ -35,6 +35,7 @@ The .env file allows you to edit some basic CSS and HTML properties.
 
 ## TODOs
 
+- Native hyperlinks and Images Tags
 - A way to execute *builder.py*, commit and push.
 - Tags filter directly in JavaScript
 - Better Markdown support.

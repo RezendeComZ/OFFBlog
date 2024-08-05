@@ -1,6 +1,6 @@
 import configs, const, util
 
-code_block_start = True
+tag_start_state = True
 
 code_block_div_start = "<div class=code_block>"
 
@@ -9,24 +9,25 @@ div_end = "</div>"
 def title(article_title):
   return "<title>" + article_title + " - " + configs.TITLE + "</title>"
 
-def code_block_tag():
-  global code_block_start
-  if code_block_start:
-    code_block_start = False
-    return code_block_div_start
+def tag_marker(tag_start):
+  global tag_start_state
+  if tag_start_state:
+    tag_start_state = False
+    return tag_start
   else:
-    code_block_start = True
+    tag_start_state = True
     return div_end
 
-def code_block_formater(paragraphs_html):
-  global code_block_start
-  code_block_start = True
-  code_blocks = paragraphs_html.split("<p>```</p>")
-  code_block_tags = "".join(map(lambda p: p + code_block_tag(), code_blocks))
-  return code_block_tags[slice(-len(code_block_div_start))] # Remove extra code_block div, not my best code
+def tag_formater(paragraphs_html, div_start, marker):
+  global tag_start
+  tag_start = True
+  code_blocks = paragraphs_html.split(marker)
+  code_block_tags = "".join(map(lambda p: p + tag_marker(div_start), code_blocks))
+  return code_block_tags[slice(-len(div_start))] # Remove extra code_block div, not my best code
 
 def text_formatter(paragraphs_html):
-  return code_block_formater(paragraphs_html)
+  code_block = tag_formater(paragraphs_html, code_block_div_start, "<p>```</p>")
+  return code_block
 
 def html_tag(content):
   return "<!doctype html><html lang=\"en-US\">" + content + "</html>"
