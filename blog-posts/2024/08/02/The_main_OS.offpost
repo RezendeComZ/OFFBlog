@@ -1,0 +1,72 @@
+# My history with OSes
+
+As a millenium person born in Brazil my first contact with computers was in the mid-90s with Microsoft Windows machines. At that time, Microsoft had already established itself as the leader in operating systems, my knowledge was limit to the Windows and sometimes MS-DOS (for game compatibility reasons).
+
+But this was not always the case, especially in the USA, in 1980s and before mid-90s OSs compete with each other, and in this race had no clear winner, even though IBM and clones were in greater numbers.
+
+<div class=image><img src="computers_market_share_1980s.jpg"></br>Computer market share in USA - 1980s. Credits: Ars Technica.</div>
+
+**img**{"desc":"Computer market share in USA - 1980s. Credits: Ars Technica.", "source": "computers_market_share_1980s.jpg"}**img**
+
+IMG(Computer market share in 1980s. Credits: Ars Technica(https://arstechnica.com/features/2005/12/total-share/5/))
+
+I started using Windows 3.1 as a kid at friends's houses, in 1998 my family was able to acquire a computer from ByteOn, an Intel Celeron 266 Mhz with 32 Mb of RAM and about 4 Gb from HDD. This had huge impact in my life, I was able to explore the family`s computer in a way somethigs a bit catrastrofic, deleting or renaming important files in System32 folder, and doing a lot of things in age that internet was avalible at weekends due dial-up high costs/
+
+IMG(It wasnt exacly this model, by was the closed that I could get from a telephone card. Credits: Telecartofilia (archived) (https://web.archive.org/web/20240804190728/https://www.telecartofiliafurtado.com.br/produto/sp-0074m-byte-on/))
+
+Kids at my age never used other OSes but Windows and MS-Dos, Microsoft was a computer synonym, it never crossed our minds that other systems existed.
+
+A brief note about Macintoshes at time:
+Apple Macintosh had no popularity in my circle, it was too expensive, a "movie computer" I could only see in some movies, with an honorable mention to Blank Check (https://en.wikipedia.org/wiki/Blank_Check_(film)) a movie from 1994, in the movie the main character has a Macintosh with a voice synthesizer, that was very cool from a kid perspective, the story of the movie is a little embarrassing to watch today, but the Macintosh stayed in my mind forever.
+
+I dont know when or how, but someday I heard about an OS called Linux, it was free and "anyone" could edit and distribuite. And someday in early 2000s my stepfather stepfather brought me a CD copy of Slackware Linux from a magazine and gave to me complete freedom to explore and format the system. I remember that I got and entire day of trying to install the system e never got to finish the installation, when the end of the day came I was exhausted and sad, I gave up, it was too hard to do anything! Windows 98 was installed again!
+
+IMG(Slackware 9 installation, not so intuitive. Credits: Slackbook https://www.slackbook.org/html/system-configuration-kernel.html)
+
+Another year passes and I finnaly heart about an easy brazilian Linux distribuition called Kurumin.
+
+IMG(Kurumin 7 from 2008. Credits: Wikipedia https://pt.wikipedia.org/wiki/Kurumin)
+
+Kurumin was easy to use like every distro that use KDE or Gnome, but with the main advantage to run directy from CD-Rom. Install another system was no easy task, I am not talking about tecnhical details, but also the fear to use another system. Kurumin`s live CD allowed to do a test drive before any HDD modification.
+It was fast, bundle with a bunch of applications great for everyday use, and had a intuitive KDE interface, very friendly. After using Kurumin`s live CD the system gained intimacy with the user and give some confort to install the full system on HDD.
+
+From a tecnhical point of view, Kurumin wasnt an engineering marvel, but it was made for ordinary people, and that is the most important thing. The name Kurumin its derived from the Tupi-Guarani word "curumim" that means "boy" a alusion for simplicity, the "K" its from Knoppix, a distribuition that Kurumin is based on.
+
+After use Kurumin I gained intimacy with Linux and years later when Ubuntu came it was a no brainer. Kurumin development has been dead at the time, but planted a seed.
+
+Between early and late 2000s I got in touch with MacOS and MacOS X. In early 2000s, my uncle who is a graphic designer got home an old Power Macintosh from late 90s with a build-in display. I was very curious to use this "obscure" OS called Mac OS (not MacOS or Mac OS X), I guess it was the 8 ou 9 version. The funny thing was to find how to turn on the computer and turn off. 
+
+IMG(There is a special button on the keyboard to turn on classic Mac)
+
+IMG(To turn off you have to go in "Special" and them "Shut down")
+
+But that experience was very brief. It wasnt in my home, and I had no software to run beside a Quicktime file with an episode of the Simpsons where they visit Brazil, this was very cool, I had never seen a ZipDrive, and this episode was in a Zip disk.
+
+At the time I was using Kurumin and then Ubuntu and Windows XP with a dualboot, and like most people, I skipped Windows Vista. The PC occupied all my time with computers, but the things started to change with my graduation.
+
+I studied an audiovisual related course, using a Mac was something naturally at the time. Windows at the time were way behind Macs when dealing with large files e different codecs. Furthermore, there was no really good video editing software for Windows, Adobe Premiere has a poor experience compared to Apple's Final Cut Pro and Sony Vegas has no chance at all to compete.
+
+Classic Mac OS was a thing of the past, Steve Jobs even held a funeral for the old version of the system:
+https://www.youtube.com/watch?v=Cl7xQ8i3fc0
+
+Using Mac OS X (now with "X"!), was an easier experience compared to classic Mac OS and I buy the hype and got a Macbook Pro 2010 base model with Mac OS X Snow Leopard. I learn to use and love the system, keeping Windows XP dualboot with oficial Apple Support with Apple Bootcamp. Bootcamp was an Apple software who target people afraid of switching to a completely different system, it contains drivers for Windows XP/Vista/7 for my Macbook model.
+
+After some months, the dualboot got behind and I was using Mac OS X all the time.
+
+
+
+TODO macbook pro:
+Using in univeristy, work, freelances, and learning to code
+
+
+home use
+
+TODO:
+Work,
+
+
+Retro
+
+
+Bibliografia:
+IMG(Computer market share in 1990s. Credits: Ars Technica(https://arstechnica.com/features/2005/12/total-share/8/))
