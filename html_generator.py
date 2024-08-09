@@ -2,7 +2,8 @@ import configs, const, util
 
 tag_start_state = True
 
-code_block_div_start = "<div class=code_block>"
+def div_start(html_class):
+  return "<div class=" + html_class + ">"
 
 div_end = "</div>"
 
@@ -26,7 +27,7 @@ def tag_formater(paragraphs_html, div_start, marker):
   return code_block_tags[slice(-len(div_start))] # Remove extra code_block div, not my best code
 
 def text_formatter(paragraphs_html):
-  code_block = tag_formater(paragraphs_html, code_block_div_start, "<p>```</p>")
+  code_block = tag_formater(paragraphs_html, div_start("code_block"), "<p>```</p>")
   return code_block
 
 def html_tag(content):
