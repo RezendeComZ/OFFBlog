@@ -2,24 +2,27 @@
 
 As a millenium person born in Brazil my first contact with computers was in the mid-90s with Microsoft Windows machines. At that time, Microsoft had already established itself as the leader in operating systems, my knowledge was limit to the Windows and sometimes MS-DOS (for game compatibility reasons).
 
-For some context, Microsoft dominating the market wasn't always the case, especially in the USA, in 1980s and before mid-90s OSs compete with each other, and in this race had no clear winner, even though IBM and clones were in greater numbers. I don´t have brazilians numbers, but probably wasn´t so different, with more BASIC dialect machines dominating the market, like endless Apple II and Sinclair's clones.
+For some context, Microsoft dominating the market wasn't always the case, especially in the USA, in 1980s and before mid-90s OSs compete with each other, and in this race had no clear winner, even though IBM and clones were in greater numbers.
 
 <div class=image><img src="computers_market_share_1980s.jpg">Computer market share in USA - 1980s. Credits: Ars Technica [1].</div>
+
+I don´t have brazilians numbers, but probably wasn´t so different, with more BASIC dialect machines dominating the market, like endless Apple II and Sinclair's clones.
+
+<div class=image><img src="sprectrum.jpg">"The computer that has seven lives". An Apple Clone Ad from 80s. Credits: Museu Capixaba do Computador [TODO].</div>
 
 I started using Windows 3.1 as a kid at friends's houses, in 1998 my family was able to acquire a computer from ByteOn, an Intel Celeron 266 Mhz with 32 Mb of RAM and about 4 Gb from HDD. This had huge impact in my life, I was able to explore the family`s computer in a way somethigs a bit catrastrofic, deleting or renaming important files in System32 folder, and doing a lot of things in an age that internet was only avaliable at weekends due dial-up high costs.
 
 <div class=image><img src="byteon.jpg">It wasnt exacly this model, by was the closed that I could get from a telephone card. Credits: Telecartofilia [2].</div>
 
-For kids at my age Microsoft was a computer synonym, me and my friends never used other OSes but Windows and MS-Dos, it never crossed our minds that other systems existed.
+For kids at my age Microsoft was a computer synonym, me and my friends never used other OSes but Windows and MS-Dos, it never crossed our minds that other systems existed. Just like Windows was a computer synonym, Microsoft Office was starting to dominate the market, after Windows 95 the office suite gain a lot of popularity, but somehow our computer has Lotus 1-2-3 suite, just like Microsoft Office, had an word processor, spreadsheet and a presentantion software
 
-A brief note about Macintoshes at time:
-Apple Macintosh had low popularity due high costs, especially in my circle, it was too expensive, a "movie computer" to me, I could only see in some movies, with an honorable mention to <a href="https://en.wikipedia.org/wiki/Blank_Check_(film)">Blank Check</a> a movie from 1994, in the movie the main character has a Macintosh with a voice synthesizer, that was very cool from a kid perspective, the story of the movie is a little embarrassing to watch today, but the Macintosh stayed in my mind forever.
+A brief note about Macintoshes at time in my context. Apple's Macintosh had low popularity in Brazil due high costs, especially in my circle, it was too expensive, a "movie computer" to me, I could only see in some movies, with an honorable mention to <a href="https://en.wikipedia.org/wiki/Blank_Check_(film)">Blank Check</a> a movie from 1994, in the movie the main character has a Macintosh Performa 600  with a voice synthesizer, that was very cool from a kid perspective, the story of the movie is a little embarrassing, but the Macintosh stayed in my mind forever.
 
-I dont know when or how, but someday I heard about an OS called Linux, perhaps through INFO magazine, a popular brazilian magazine about computers, it was free and "anyone" could edit and distribute, some time later I went to the internet provider we subscribed to, it was a small provider in a small town, so when you had some any problem like wanted to know how to connect or your email password was not working you you physically visited the provider. Arriving there, I saw some weird system, with Microsoft Windows running in a window or vice versa. This really shock me, looking back, it was probably something running KDE.
+I don't know when or how, but someday I heard about an OS called Linux, perhaps through INFO magazine, a popular brazilian magazine about computers, it was free and "anyone" could edit and distribute, some time later I went to the internet provider we subscribed to, it was a small ISP in a small town, so when you had some any problem like wanted to know how to connect or your email password was not working, you physically visited the provider. Arriving there, I saw some weird system, with Microsoft Windows running in a window or vice versa. This really shock me, looking back, it was probably something running KDE.
 
 <div class=image><img src="KDE_1.0.png">KDE 1.0 from 1998. Credits: Wikipedia [3].</div>
 
-And someday in early 2000s my stepfather brought me a CD copy of Slackware Linux from a magazine and gave to me complete freedom to explore and format the system. I remember that I got and entire day of trying to install the system e never got to finish the installation, when the end of the day came I was exhausted and sad, I gave up, it was too hard to do anything! Windows 98 was installed again!
+Someday in early 2000s my stepfather brought me a CD copy of Slackware Linux from a magazine and gave to me complete freedom to explore and format the system. I remember that I got and entire day of trying to install the system e never got to finish the installation, when the end of the day came I was exhausted and sad, I gave up, it was too hard to do anything! Windows 98 was installed again!
 
 <div class=image><img src="slackware_9_installation.png">Slackware 9 installation, not so intuitive. Credits: Slackbook. [4].</div>
 
@@ -101,6 +104,8 @@ Macintosh book
 
 Bibliografia:
 [1] https://arstechnica.com/features/2005/12/total-share/5/ isso aqui nao está inteiro.
+
+[TODO] https://museucapixaba.com.br/memoria/anuncios-antigos/spectrum-micro-engenho-2-revista-micromundo/
 
 [2] https://web.archive.org/web/20240804190728/https://www.telecartofiliafurtado.com.br/produto/sp-0074m-byte-on/
 
